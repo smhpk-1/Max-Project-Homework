@@ -14,6 +14,39 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-webcam-title",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 400.0, 15.0, 200.0, 20.0 ],
+					"text" : "WEBCAM PIANO BAĞLANTISI",
+					"fontface" : 1
+				}
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-webcam-recv-note",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 500.0, 31.0, 100.0, 22.0 ],
+					"text" : "r webcam_note"
+				}
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-webcam-recv-vel",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 620.0, 31.0, 90.0, 22.0 ],
+					"text" : "r webcam_vel"
+				}
+			}
+, 			{
+				"box" : 				{
 					"format" : 6,
 					"id" : "obj-58",
 					"maxclass" : "flonum",
@@ -1056,6 +1089,12 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-webcam-recv-note", 0 ]
+				}
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-1", 1 ]
